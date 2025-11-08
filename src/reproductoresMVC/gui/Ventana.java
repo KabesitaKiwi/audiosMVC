@@ -20,4 +20,6 @@ public class Ventana {
     private JButton exportarButton;
     private JButton importarButton;
     private JTextArea campoResultado;
+    private JLabel lblGenero;
+    private JTextField textField4;
 }
