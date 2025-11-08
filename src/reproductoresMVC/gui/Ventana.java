@@ -1,5 +1,7 @@
 package reproductoresMVC.gui;
 
+import com.github.lgooddatepicker.components.DatePicker;
+
 import javax.swing.*;
 
 public class Ventana {
@@ -8,18 +10,19 @@ public class Ventana {
     private JRadioButton podcastRadioButton;
     private JRadioButton audioLibroRadioButton;
     private JRadioButton noticias;
-    private JTextField textField1;
-    private JTextField textField2;
+    private JTextField campoTitulo;
+    private JTextField campoAutor;
     private JComboBox comboIdioma;
     private JComboBox comboFormato;
     private JSpinner campoDuracion;
     private JSpinner campoParticipantes;
     private JSlider campoValoracion;
-    private JTextField textField3;
+    private JTextField campoProductora;
     private JButton nuevoButton;
     private JButton exportarButton;
     private JButton importarButton;
     private JTextArea campoResultado;
     private JLabel lblGenero;
-    private JTextField textField4;
+    private JTextField campoCambiante;
+    private DatePicker campoFehca;
 }
