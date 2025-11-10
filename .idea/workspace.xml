@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="194cd68b-0735-42f1-934d-78042578bbf7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +82,8 @@
       <updated>1762600992095</updated>
       <workItem from="1762600994430" duration="15966000" />
       <workItem from="1762704823792" duration="12812000" />
-      <workItem from="1762722176949" duration="194000" />
+      <workItem from="1762722176949" duration="515000" />
+      <workItem from="1762809232263" duration="1189000" />
     </task>
     <servers />
   </component>
