@@ -7,26 +7,26 @@ import javax.swing.*;
 import java.util.ArrayList;
 
 public class Ventana {
-    private JPanel panel1;
-    private JRadioButton músicaRadioButton;
-    private JRadioButton podcastRadioButton;
-    private JRadioButton audioLibroRadioButton;
-    private JRadioButton noticias;
-    private JTextField campoTitulo;
-    private JTextField campoAutor;
-    private JComboBox comboIdioma;
-    private JComboBox comboFormato;
-    private JSpinner campoDuracion;
-    private JSpinner campoParticipantes;
-    private JSlider campoValoracion;
-    private JTextField campoProductora;
-    private JButton nuevoButton;
-    private JButton exportarButton;
-    private JButton importarButton;
-    private JLabel lblGenero;
-    private JTextField campoCambiante;
-    private DatePicker campoFehca;
-    private JList list1;
+    public JPanel panel1;
+    public JRadioButton músicaRadioButton;
+    public JRadioButton podcastRadioButton;
+    public JRadioButton audioLibroRadioButton;
+    public JRadioButton noticias;
+    public JTextField campoTitulo;
+    public JTextField campoAutor;
+    public JComboBox comboIdioma;
+    public JComboBox comboFormato;
+    public JSpinner campoDuracion;
+    public JSpinner campoParticipantes;
+    public JSlider campoValoracion;
+    public JTextField campoProductora;
+    public JButton nuevoButton;
+    public JButton exportarButton;
+    public JButton importarButton;
+    public JLabel lblGenero;
+    public JTextField campoGeneroFluido;
+    public DatePicker campoFehca;
+    public JList list1;
 
 
     //hechos por mi
