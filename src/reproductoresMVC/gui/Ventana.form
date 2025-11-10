@@ -193,13 +193,18 @@
           <forms/>
         </constraints>
         <properties/>
+        <clientProperties>
+          <html.disable class="java.lang.Boolean" value="false"/>
+        </clientProperties>
       </component>
       <component id="285ff" class="javax.swing.JComboBox" binding="comboFormato">
         <constraints>
           <grid row="18" column="2" row-span="1" col-span="7" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
           <forms/>
         </constraints>
-        <properties/>
+        <properties>
+          <model/>
+        </properties>
       </component>
       <component id="5dd4e" class="javax.swing.JSpinner" binding="campoDuracion">
         <constraints>
