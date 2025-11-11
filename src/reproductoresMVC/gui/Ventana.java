@@ -24,7 +24,11 @@ public class Ventana {
     public JButton exportarButton;
     public JButton importarButton;
     public JLabel lblGenero;
+<<<<<<< HEAD
     public JTextField campoCambiante;
+
+    public JTextField campoGeneroFluido;
+>>>>>>> 8f83fbfecd29948e1ff5d48ee4254a9d070983c2
     public DatePicker campoFehca;
     public JList list1;
 

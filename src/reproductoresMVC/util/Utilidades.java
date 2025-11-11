@@ -42,4 +42,12 @@ public class Utilidades {
         return selectorFichero;
     }
 
+    public static void lanzaAlertaCero(JSpinner spinner){
+        JOptionPane.showMessageDialog(null, "El campo " + spinner + "no puede ser 0");
+    }
+
+    public static void lanzaAlertaCombo(JComboBox combo){
+        JOptionPane.showMessageDialog(null, "Seleccione una opccion en: " + combo );
+    }
+
 }

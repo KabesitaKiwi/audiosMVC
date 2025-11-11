@@ -3,8 +3,15 @@
   <component name="ChangeListManager">
     <list default="true" id="194cd68b-0735-42f1-934d-78042578bbf7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" afterDir="false" />
+=======
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" afterDir="false" />
+>>>>>>> 8f83fbfecd29948e1ff5d48ee4254a9d070983c2
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.java" afterDir="false" />
+>>>>>>> b4c150f4287d1a169390cebcb7579379670714b0
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -84,8 +91,17 @@
       <updated>1762600992095</updated>
       <workItem from="1762600994430" duration="15966000" />
       <workItem from="1762704823792" duration="12812000" />
+<<<<<<< HEAD
+      <workItem from="1762722176949" duration="515000" />
+      <workItem from="1762809232263" duration="1189000" />
+=======
       <workItem from="1762722176949" duration="194000" />
+<<<<<<< HEAD
       <workItem from="1762758824675" duration="5580000" />
+=======
+      <workItem from="1762758824675" duration="3619000" />
+>>>>>>> b4c150f4287d1a169390cebcb7579379670714b0
+>>>>>>> 8f83fbfecd29948e1ff5d48ee4254a9d070983c2
     </task>
     <servers />
   </component>
