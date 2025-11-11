@@ -52,7 +52,7 @@
           <text value="Tipo de audio"/>
         </properties>
       </component>
-      <component id="31370" class="javax.swing.JRadioButton" binding="músicaRadioButton" default-binding="true">
+      <component id="31370" class="javax.swing.JRadioButton" binding="musicaRadioButton">
         <constraints>
           <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
           <forms/>
@@ -106,7 +106,9 @@
           </grid>
           <forms defaultalign-horz="false"/>
         </constraints>
-        <properties/>
+        <properties>
+          <text value=""/>
+        </properties>
       </component>
       <component id="4a11" class="javax.swing.JLabel">
         <constraints>

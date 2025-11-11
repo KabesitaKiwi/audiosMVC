@@ -13,10 +13,10 @@ public class Utilidades {
         return campo.getDate() == null;
     }
     public static void  lanzaAlertaVacio (JTextField campo){
-        JOptionPane.showMessageDialog(null,"El campo " + campo + "es obligatorio");
+        JOptionPane.showMessageDialog(null,"El campo " + campo.getName() + " es obligatorio");
     }
     public static void lanzaAlertaVacioCalendar(DatePicker campo){
-        JOptionPane.showMessageDialog(null,"El campo " + campo + "es obligatorio");
+        JOptionPane.showMessageDialog(null,"El campo " + campo.getName() + "es obligatorio");
     }
 
     public static boolean comboNoSeleccionado(JComboBox combo){
@@ -30,7 +30,7 @@ public class Utilidades {
         return JOptionPane.showConfirmDialog(null,mensaje,titulo,JOptionPane.YES_NO_OPTION);
     }
 
-    public static JFileChooser crearSelectorFichero(File rutaDefecto, String tipoArchivos, String extension){
+    public static JFileChooser cerrarSelectorFichero(File rutaDefecto, String tipoArchivos, String extension){
         JFileChooser selectorFichero = new JFileChooser();
         if (rutaDefecto != null){
             selectorFichero.setCurrentDirectory(rutaDefecto);
@@ -43,11 +43,11 @@ public class Utilidades {
     }
 
     public static void lanzaAlertaCero(JSpinner spinner){
-        JOptionPane.showMessageDialog(null, "El campo " + spinner + "no puede ser 0");
+        JOptionPane.showMessageDialog(null, "El campo " + spinner.getName() + "no puede ser 0");
     }
 
     public static void lanzaAlertaCombo(JComboBox combo){
-        JOptionPane.showMessageDialog(null, "Seleccione una opccion en: " + combo );
+        JOptionPane.showMessageDialog(null, "Seleccione una opccion en: " + combo.getName() );
     }
 
 }

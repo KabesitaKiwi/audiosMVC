@@ -8,7 +8,7 @@ import java.util.ArrayList;
 
 public class Ventana {
     public JPanel panel1;
-    public JRadioButton músicaRadioButton;
+    public JRadioButton musicaRadioButton;
     public JRadioButton podcastRadioButton;
     public JRadioButton audioLibroRadioButton;
     public JRadioButton noticias;
@@ -24,11 +24,8 @@ public class Ventana {
     public JButton exportarButton;
     public JButton importarButton;
     public JLabel lblGenero;
-<<<<<<< HEAD
     public JTextField campoCambiante;
-
     public JTextField campoGeneroFluido;
->>>>>>> 8f83fbfecd29948e1ff5d48ee4254a9d070983c2
     public DatePicker campoFehca;
     public JList list1;
 
@@ -49,6 +46,7 @@ public class Ventana {
     }
 
     public void initComponents(){
+        campoTitulo.setName("titulo");
         dlmAudio = new DefaultListModel<Audio>();
         list1.setModel(dlmAudio);
 

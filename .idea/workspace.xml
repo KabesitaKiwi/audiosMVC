@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="194cd68b-0735-42f1-934d-78042578bbf7" name="Default Changelist" comment="">
+    <list default="true" id="22a39b46-f8ce-4fdc-ad3b-f5d3d8e9e6c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorControlador.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/Ventana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/Ventana.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/util/Utilidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/util/Utilidades.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/Principal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" afterDir="false" />
-=======
-<<<<<<< HEAD
-=======
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" afterDir="false" />
->>>>>>> 8f83fbfecd29948e1ff5d48ee4254a9d070983c2
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.java" afterDir="false" />
->>>>>>> b4c150f4287d1a169390cebcb7579379670714b0
+      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/util/Utilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/util/Utilidades.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,20 +18,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
-  <component name="ProjectId" id="35C50giiD6LYpXvqww5i3aGpepk" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
@@ -42,10 +28,6 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -84,24 +66,12 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="194cd68b-0735-42f1-934d-78042578bbf7" name="Default Changelist" comment="" />
-      <created>1762600992095</created>
+      <changelist id="22a39b46-f8ce-4fdc-ad3b-f5d3d8e9e6c3" name="Default Changelist" comment="" />
+      <created>1762853375381</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1762600992095</updated>
-      <workItem from="1762600994430" duration="15966000" />
-      <workItem from="1762704823792" duration="12812000" />
-<<<<<<< HEAD
-      <workItem from="1762722176949" duration="515000" />
-      <workItem from="1762809232263" duration="1189000" />
-=======
-      <workItem from="1762722176949" duration="194000" />
-<<<<<<< HEAD
-      <workItem from="1762758824675" duration="5580000" />
-=======
-      <workItem from="1762758824675" duration="3619000" />
->>>>>>> b4c150f4287d1a169390cebcb7579379670714b0
->>>>>>> 8f83fbfecd29948e1ff5d48ee4254a9d070983c2
+      <updated>1762853375381</updated>
+      <workItem from="1762853376614" duration="7940000" />
     </task>
     <servers />
   </component>
@@ -113,9 +83,7 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State>
-              <option name="COLUMN_ORDER" />
-            </State>
+            <State />
           </value>
         </entry>
       </map>
