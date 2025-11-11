@@ -1,7 +1,7 @@
 package reproductoresMVC.gui;
 
 import org.xml.sax.SAXException;
-import reproductoresMVC.base.Audio;
+import reproductoresMVC.base.*;
 import reproductoresMVC.util.Utilidades;
 
 import javax.swing.*;
@@ -13,12 +13,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Properties;
 
 public class ReproductorControlador implements ActionListener, ListSelectionListener, WindowListener {
@@ -35,15 +31,9 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
             System.out.println("No existe el fichero de configuracion "+e.getMessage());
         }
         addActionListener(this);
-
+        addWindowListener(this);
+        addListSelectionListener(this);
     }
-
-    private void cargarDatosConfiguracion() throws IOException {
-        Properties configuracion = new Properties();
-        configuracion.load(new FileReader("vehiculos.conf"));
-        ultimaRutaExportada=new File (configuracion.getProperty("ultimaRutaExportada"));
-    }
-
 
     private void addActionListener(ActionListener listener){
         vista.nuevoButton.addActionListener(listener);
@@ -56,13 +46,38 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
 
     }
 
+
+    private void addWindowListener(WindowListener listener){
+        vista.frame.addWindowListener(listener);
+    }
+
+    private void addListSelectionListener(ListSelectionListener listener){
+        vista.list1.addListSelectionListener(listener);
+    }
+
+    private void cargarDatosConfiguracion() throws IOException {
+        Properties configuracion = new Properties();
+        configuracion.load(new FileReader("audios.conf"));
+        ultimaRutaExportada=new File (configuracion.getProperty("ultimaRutaExportada"));
+    }
+
+    private void actualizarDatosConfiguracion(File ultimaRutaExportada) {
+        this.ultimaRutaExportada=ultimaRutaExportada;
+    }
+
+    private void guardarDatosConfiguracion() throws IOException {
+        Properties configuracion = new Properties();
+        configuracion.setProperty("ultimaRutaExportada",ultimaRutaExportada.getAbsolutePath());
+        configuracion.store(new PrintWriter("audios.conf"), "Datos configuracion Audios");
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         String actionCommand = e.getActionCommand();
         switch (actionCommand){
             case "Nuevo":
                 registrarAudio();
-                limpiarCampos();
+
                 refrescar();
                 break;
             case "Importar":
@@ -87,6 +102,7 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
                 if(op2 == JFileChooser.APPROVE_OPTION){
                     try {
                         modelo.exportarXML(selectorFichero2.getSelectedFile());
+                        actualizarDatosConfiguracion(selectorFichero2.getSelectedFile());
                     } catch (TransformerException ex) {
                         ex.printStackTrace();
                     } catch (ParserConfigurationException ex) {
@@ -96,15 +112,19 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
                 break;
             case "Música":
                 vista.lblGenero.setText("Género");
+                vista.campoGeneroFluido.setName("Género");
                 break;
             case "Podcast":
                 vista.lblGenero.setText("Inivitados");
+                vista.campoGeneroFluido.setName("Invitados");
                 break;
             case "Audio Libro":
-                vista.lblGenero.setText("Categoria");
+                vista.lblGenero.setText("Categoría");
+                vista.campoGeneroFluido.setName("Categoría");
                 break;
             case "Noticias":
-                vista.lblGenero.setText("Categoria");
+                vista.lblGenero.setText("Categoría");
+                vista.lblGenero.setName("Categoría");
                 break;
         }
     }
@@ -116,7 +136,15 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
 
     @Override
     public void windowClosing(WindowEvent e) {
-
+        int respuesta = Utilidades.mensajeConfirmacion("¿Estas seguro que quieres salir de la aplicacion?", "Salir");
+        if (respuesta == JOptionPane.OK_OPTION){
+            try {
+                guardarDatosConfiguracion();
+            } catch (IOException ex) {
+                ex.printStackTrace();
+            }
+            System.exit(0);
+        }
     }
 
     @Override
@@ -146,6 +174,32 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
 
     @Override
     public void valueChanged(ListSelectionEvent e) {
+        if (e.getValueIsAdjusting()){
+            Audio audioSeleccionado = (Audio) vista.list1.getSelectedValue();
+
+            vista.campoTitulo.setText(audioSeleccionado.getTitulo());
+            vista.campoAutor.setText(audioSeleccionado.getAutor());
+            vista.campoProductora.setText(audioSeleccionado.getAutor());
+            vista.comboIdioma.setSelectedItem(audioSeleccionado.getIdioma());
+            vista.comboFormato.setSelectedItem(audioSeleccionado.getFormato());
+            vista.campoDuracion.setValue(audioSeleccionado.getAutor());
+            vista.campoParticipantes.setValue(audioSeleccionado.getAutor());
+            vista.campoFehca.setText(audioSeleccionado.getAutor());
+            if(audioSeleccionado instanceof Musica){
+                vista.musicaRadioButton.doClick();
+                vista.campoGeneroFluido.setText(((Musica) audioSeleccionado).getGenero());
+            }else if(audioSeleccionado instanceof AudioLibro){
+                vista.audioLibroRadioButton.doClick();
+                vista.campoGeneroFluido.setText(((AudioLibro) audioSeleccionado).getCategoria());
+            }else if(audioSeleccionado instanceof Podcast){
+                vista.audioLibroRadioButton.doClick();
+                vista.campoGeneroFluido.setText(((Podcast) audioSeleccionado).getInvitados());
+            }else if (audioSeleccionado instanceof Noticias){
+                vista.noticias.doClick();
+                vista.campoGeneroFluido.setText(((Noticias) audioSeleccionado).getCategoria());
+            }
+
+        }
 
     }
 
@@ -163,23 +217,23 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
         int participantes = (int) vista.campoParticipantes.getValue();
         Double duracion  = (double) vista.campoDuracion.getValue();
 
-        if (!Utilidades.campoVacio(vista.campoTitulo)){
+        if (!Utilidades.campoVacioCalendario(vista.campoTitulo)){
             Utilidades.lanzaAlertaVacio(vista.campoTitulo);
-        }else if (!Utilidades.campoVacio(vista.campoAutor)){
+        }else if (!Utilidades.campoVacioCalendario(vista.campoAutor)){
             Utilidades.lanzaAlertaVacio(vista.campoAutor);
-        }else if(!Utilidades.campoVacio(vista.campoProductora)){
+        }else if(!Utilidades.campoVacioCalendario(vista.campoProductora)){
             Utilidades.lanzaAlertaVacio(vista.campoProductora);
-        }else if (!Utilidades.campoVacio(vista.campoGeneroFluido)){
+        }else if (!Utilidades.campoVacioCalendario(vista.campoGeneroFluido)){
             Utilidades.lanzaAlertaVacio(vista.campoGeneroFluido);
-        }else if (!Utilidades.campoVacio(vista.campoFehca)){
+        }else if (Utilidades.campoVacioCalendario(vista.campoFehca)){
             Utilidades.lanzaAlertaVacioCalendar(vista.campoFehca);
         }else if (participantes == 0){
             Utilidades.lanzaAlertaCero(vista.campoParticipantes);
         }else if (duracion == 0){
             Utilidades.lanzaAlertaCero(vista.campoDuracion);
-        }else if (!Utilidades.comboNoSeleccionado(vista.comboIdioma)){
+        }else if (Utilidades.comboNoSeleccionado(vista.comboIdioma)){
             Utilidades.lanzaAlertaCombo(vista.comboIdioma);
-        }else if(!Utilidades.comboNoSeleccionado(vista.comboFormato)){
+        }else if(Utilidades.comboNoSeleccionado(vista.comboFormato)){
             Utilidades.lanzaAlertaCombo(vista.comboFormato);
         }else{
             try {
@@ -195,12 +249,16 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
                 valoracion = vista.campoValoracion.getValue();
                 if (vista.musicaRadioButton.isSelected()){
                     modelo.altaMusica(titulo,autor,prodcutora,generoFluido,fechaDeSalida,nParticipantes,tiempoDuracion,idioma,formato,valoracion);
+                    limpiarCampos();
                 }else if(vista.podcastRadioButton.isSelected()){
                     modelo.altaPodcast(titulo,autor,prodcutora,fechaDeSalida,nParticipantes,duracion,idioma,formato,valoracion,generoFluido);
+                    limpiarCampos();
                 }else if (vista.audioLibroRadioButton.isSelected()){
                     modelo.altaAudioLibro(titulo,autor,generoFluido,prodcutora,fechaDeSalida,nParticipantes,duracion,idioma,formato,valoracion);
+                    limpiarCampos();
                 }else {
                     modelo.altaNoticias(titulo,autor,prodcutora,fechaDeSalida,nParticipantes,duracion,idioma,formato,valoracion,generoFluido);
+                    limpiarCampos();
                 }
             }catch (Exception ex) {
 
@@ -215,17 +273,18 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
         vista.campoProductora.setText(null);
         vista.campoFehca.setText(null);
         vista.campoDuracion.setValue(0);
-        vista.campoParticipantes.setValue(0);
+        vista.campoParticipantes.setValue(1);
         vista.comboIdioma.setSelectedIndex(0);
         vista.comboFormato.setSelectedIndex(0);
+        vista.campoValoracion.setValue(5);
         vista.campoTitulo.requestFocus(); //sirve para poner el cursor directamente en ese campo
 
     }
 
     private void refrescar() {
         vista.dlmAudio.clear();
-        for (Audio vehiculo:modelo.obtenerListaAudios()) {
-            vista.dlmAudio.addElement(vehiculo);
+        for (Audio audio:modelo.obtenerListaAudios()) {
+            vista.dlmAudio.addElement(audio);
         }
     }
 }

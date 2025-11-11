@@ -1,7 +1,7 @@
 package reproductoresMVC;
 
-import reproductoresMVC.gui.ReproductorControlador;
-import reproductoresMVC.gui.ReproductorModelo;
+        import reproductoresMVC.gui.ReproductorControlador;
+        import reproductoresMVC.gui.ReproductorModelo;
         import reproductoresMVC.gui.Ventana;
 
 public class Principal {

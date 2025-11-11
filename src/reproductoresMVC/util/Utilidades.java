@@ -6,10 +6,10 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 import java.io.File;
 
 public class Utilidades {
-    public static boolean campoVacio(JTextField campo){
-               return !campo.getText().isEmpty();
+    public static boolean campoVacioCalendario(JTextField campo){
+               return !campo.getText().trim().isEmpty();
     }
-    public static boolean campoVacio(DatePicker campo){
+    public static boolean campoVacioCalendario(DatePicker campo){
         return campo.getDate() == null;
     }
     public static void  lanzaAlertaVacio (JTextField campo){
@@ -43,7 +43,7 @@ public class Utilidades {
     }
 
     public static void lanzaAlertaCero(JSpinner spinner){
-        JOptionPane.showMessageDialog(null, "El campo " + spinner.getName() + "no puede ser 0");
+        JOptionPane.showMessageDialog(null, "El campo " + spinner.getName() + " no puede ser 0");
     }
 
     public static void lanzaAlertaCombo(JComboBox combo){
