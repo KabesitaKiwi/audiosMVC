@@ -27,15 +27,19 @@ public class ReproductorModelo {
 
     public void altaMusica(String titulo, String autor, String genero, String productora, LocalDate fechaSalida, int numParticipantes, double duracion, String idioma, String formato, double valoracion) {
         Musica nuevaCancion= new Musica(titulo, autor,productora,fechaSalida,numParticipantes,duracion,idioma,formato,valoracion,genero);
+        listaAudios.add(nuevaCancion);
     }
     public void altaAudioLibro(String titulo, String autor, String categoria, String productora, LocalDate fechaSalida, int numParticipantes, double duracion, String idioma, String formato, double valoracion){
         AudioLibro nuevoLibro = new AudioLibro(titulo,autor,productora,fechaSalida,numParticipantes,duracion,idioma,formato,valoracion,categoria);
+        listaAudios.add(nuevoLibro);
     }
     public void altaPodcast(String titulo, String autor, String productora, LocalDate fechaSalida, int numParticipantes, double duracion, String idioma, String formato, double valoracion, String invitados){
         Podcast nuevoPodcast = new Podcast(titulo,autor,productora,fechaSalida,numParticipantes,duracion,idioma,formato,valoracion,invitados);
+        listaAudios.add(nuevoPodcast);
     }
     public void altaNoticias(String titulo, String autor, String productora, LocalDate fechaSalida, int numParticipantes, double duracion, String idioma, String formato, double valoracion, String categoria){
         Noticias nuevaNoticia = new Noticias(titulo,autor,productora,fechaSalida,numParticipantes,duracion,idioma,formato,valoracion,categoria);
+        listaAudios.add(nuevaNoticia);
     }
 
     public void exportarXML(File fichero) throws ParserConfigurationException, TransformerException {

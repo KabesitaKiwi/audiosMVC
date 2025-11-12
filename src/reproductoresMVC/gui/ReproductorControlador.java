@@ -77,8 +77,6 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
         switch (actionCommand){
             case "Nuevo":
                 registrarAudio();
-
-                refrescar();
                 break;
             case "Importar":
                 JFileChooser selectorFichero = Utilidades.cerrarSelectorFichero(ultimaRutaExportada, "Archivos XML", "xml");
@@ -179,12 +177,12 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
 
             vista.campoTitulo.setText(audioSeleccionado.getTitulo());
             vista.campoAutor.setText(audioSeleccionado.getAutor());
-            vista.campoProductora.setText(audioSeleccionado.getAutor());
+            vista.campoProductora.setText(audioSeleccionado.getProductora());
             vista.comboIdioma.setSelectedItem(audioSeleccionado.getIdioma());
             vista.comboFormato.setSelectedItem(audioSeleccionado.getFormato());
-            vista.campoDuracion.setValue(audioSeleccionado.getAutor());
-            vista.campoParticipantes.setValue(audioSeleccionado.getAutor());
-            vista.campoFehca.setText(audioSeleccionado.getAutor());
+            vista.campoDuracion.setValue(audioSeleccionado.getDuracion());
+            vista.campoParticipantes.setValue(audioSeleccionado.getNumParticipantes());
+            vista.campoFehca.setDate(audioSeleccionado.getFechaSalida());
             if(audioSeleccionado instanceof Musica){
                 vista.musicaRadioButton.doClick();
                 vista.campoGeneroFluido.setText(((Musica) audioSeleccionado).getGenero());
@@ -214,8 +212,11 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
     int valoracion;
     LocalDate fechaDeSalida;
     public void registrarAudio(){
-        int participantes = (int) vista.campoParticipantes.getValue();
-        Double duracion  = (double) vista.campoDuracion.getValue();
+        Number valorParticipantes = (Number)  vista.campoParticipantes.getValue();
+        int participantes = valorParticipantes.intValue();
+
+        Number valorDuracion = (Number)  vista.campoParticipantes.getValue();
+        Double duracion  = valorDuracion.doubleValue();
 
         if (!Utilidades.campoVacioCalendario(vista.campoTitulo)){
             Utilidades.lanzaAlertaVacio(vista.campoTitulo);
@@ -260,6 +261,7 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
                     modelo.altaNoticias(titulo,autor,prodcutora,fechaDeSalida,nParticipantes,duracion,idioma,formato,valoracion,generoFluido);
                     limpiarCampos();
                 }
+                refrescar();
             }catch (Exception ex) {
 
             }

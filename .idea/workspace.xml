@@ -2,15 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22a39b46-f8ce-4fdc-ad3b-f5d3d8e9e6c3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/audios.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/audios.conf" beforeDir="false" afterPath="$PROJECT_DIR$/audios.conf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorControlador.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorControlador.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/Ventana.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/Ventana.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/util/Utilidades.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/util/Utilidades.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorModelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorModelo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/util/Utilidades.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/util/Utilidades.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -81,6 +78,7 @@
       <option name="presentableId" value="Default" />
       <updated>1762853375381</updated>
       <workItem from="1762853376614" duration="7940000" />
+      <workItem from="1762902519527" duration="3432000" />
     </task>
     <servers />
   </component>
