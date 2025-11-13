@@ -77,6 +77,7 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
         switch (actionCommand){
             case "Nuevo":
                 registrarAudio();
+
                 break;
             case "Importar":
                 JFileChooser selectorFichero = Utilidades.cerrarSelectorFichero(ultimaRutaExportada, "Archivos XML", "xml");
@@ -95,7 +96,7 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
                 }
                 break;
             case "Exportar":
-                JFileChooser selectorFichero2 = Utilidades.cerrarSelectorFichero(ultimaRutaExportada, "Archivos xml", "xml");
+                JFileChooser selectorFichero2 = Utilidades.cerrarSelectorFichero(ultimaRutaExportada, ".xml", ".xml");
                 int op2 =selectorFichero2.showSaveDialog(null);
                 if(op2 == JFileChooser.APPROVE_OPTION){
                     try {

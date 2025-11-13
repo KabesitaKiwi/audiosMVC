@@ -119,7 +119,7 @@ public class ReproductorModelo {
                 text = documento.createTextNode(((Musica) unAudio).getGenero());
                 nodoDatos.appendChild(text);
             }else if (unAudio instanceof AudioLibro){
-                nodoAudio = documento.createElement("categoria");
+                nodoDatos= documento.createElement("categoria");
                 nodoAudio.appendChild(nodoDatos);
                 text = documento.createTextNode(((AudioLibro) unAudio).getCategoria());
                 nodoDatos.appendChild(text);
@@ -204,6 +204,7 @@ public class ReproductorModelo {
                 nuevoPodcast.setFormato(nodoAudio.getChildNodes().item(7).getTextContent());
                 nuevoPodcast.setValoracion(Double.parseDouble(nodoAudio.getChildNodes().item(8).getTextContent()));
                 nuevoPodcast.setInvitados(nodoAudio.getChildNodes().item(9).getTextContent());
+                listaAudios.add(nuevoPodcast);
             }else{
                 if (nodoAudio.getTagName().equals("Noticias")){
                     nuevaNoticia = new Noticias();
@@ -217,7 +218,9 @@ public class ReproductorModelo {
                     nuevaNoticia.setFormato(nodoAudio.getChildNodes().item(7).getTextContent());
                     nuevaNoticia.setValoracion(Double.parseDouble(nodoAudio.getChildNodes().item(8).getTextContent()));
                     nuevaNoticia.setCategoria(nodoAudio.getChildNodes().item(9).getTextContent());
+                    listaAudios.add(nuevaNoticia);
                 }
+
             }
 
         }
