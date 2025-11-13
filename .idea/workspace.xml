@@ -4,7 +4,6 @@
     <list default="true" id="22a39b46-f8ce-4fdc-ad3b-f5d3d8e9e6c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audios.conf" beforeDir="false" afterPath="$PROJECT_DIR$/audios.conf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />

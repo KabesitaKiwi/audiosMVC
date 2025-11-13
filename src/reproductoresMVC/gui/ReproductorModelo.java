@@ -155,7 +155,7 @@ public class ReproductorModelo {
         Podcast nuevoPodcast = null;
         Noticias nuevaNoticia = null;
 
-        DocumentBuilderFactory factory = DocumentBuilderFactory.newDefaultInstance();
+        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         DocumentBuilder builder = factory.newDocumentBuilder();
         Document documento = builder.parse(fichero);
 
@@ -205,8 +205,8 @@ public class ReproductorModelo {
                 nuevoPodcast.setValoracion(Double.parseDouble(nodoAudio.getChildNodes().item(8).getTextContent()));
                 nuevoPodcast.setInvitados(nodoAudio.getChildNodes().item(9).getTextContent());
                 listaAudios.add(nuevoPodcast);
-            }else{
-                if (nodoAudio.getTagName().equals("Noticias")){
+            }else if (nodoAudio.getTagName().equals("Noticias")){
+
                     nuevaNoticia = new Noticias();
                     nuevaNoticia.setTitulo(nodoAudio.getChildNodes().item(0).getTextContent());
                     nuevaNoticia.setAutor(nodoAudio.getChildNodes().item(1).getTextContent());
@@ -219,7 +219,7 @@ public class ReproductorModelo {
                     nuevaNoticia.setValoracion(Double.parseDouble(nodoAudio.getChildNodes().item(8).getTextContent()));
                     nuevaNoticia.setCategoria(nodoAudio.getChildNodes().item(9).getTextContent());
                     listaAudios.add(nuevaNoticia);
-                }
+
 
             }
 
