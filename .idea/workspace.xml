@@ -4,7 +4,10 @@
     <list default="true" id="22a39b46-f8ce-4fdc-ad3b-f5d3d8e9e6c3" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/audios.conf" beforeDir="false" afterPath="$PROJECT_DIR$/audios.conf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorModelo.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/musicaMVC/reproductoresMVC/gui/ReproductorModelo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorControlador.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/ReproductorModelo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/reproductoresMVC/gui/Ventana.form" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -26,6 +29,9 @@
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">

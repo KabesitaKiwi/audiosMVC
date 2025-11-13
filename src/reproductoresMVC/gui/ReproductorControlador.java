@@ -184,6 +184,7 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
             vista.campoDuracion.setValue(audioSeleccionado.getDuracion());
             vista.campoParticipantes.setValue(audioSeleccionado.getNumParticipantes());
             vista.campoFehca.setDate(audioSeleccionado.getFechaSalida());
+            vista.campoValoracion.setValue((int) audioSeleccionado.getValoracion());
             if(audioSeleccionado instanceof Musica){
                 vista.musicaRadioButton.doClick();
                 vista.campoGeneroFluido.setText(((Musica) audioSeleccionado).getGenero());
@@ -290,4 +291,6 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
             vista.dlmAudio.addElement(audio);
         }
     }
+
+
 }
