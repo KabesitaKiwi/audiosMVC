@@ -21,6 +21,7 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
     private Ventana vista;
     private ReproductorModelo modelo;
     private File ultimaRutaExportada;
+    private Audio actualizarAudio;
 
     public ReproductorControlador(Ventana vista, ReproductorModelo modelo){
         this.vista=vista;
@@ -43,6 +44,8 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
         vista.podcastRadioButton.addActionListener(listener);
         vista.audioLibroRadioButton.addActionListener(listener);
         vista.noticias.addActionListener(listener);
+        vista.buscarButton.addActionListener(listener);
+        vista.actualizarButton.addActionListener(listener);
 
     }
 
@@ -125,6 +128,18 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
                 vista.lblGenero.setText("Categoría");
                 vista.lblGenero.setName("Categoría");
                 break;
+            case "Actualizar":
+                actualizarAudio();
+                break;
+            case "Buscar":
+                String buscarTitulo= vista.campoBuscar.getText().trim();
+
+                if (buscarTitulo.isEmpty()) {
+                    JOptionPane.showMessageDialog(null,"No hay ningun audio con ese titulo.","Error",JOptionPane.ERROR_MESSAGE);
+                    break;
+                }
+                modelo.buscarPorTitulo(buscarTitulo);
+                break;
         }
     }
 
@@ -175,6 +190,7 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
     public void valueChanged(ListSelectionEvent e) {
         if (e.getValueIsAdjusting()){
             Audio audioSeleccionado = (Audio) vista.list1.getSelectedValue();
+            actualizarAudio = audioSeleccionado;
 
             vista.campoTitulo.setText(audioSeleccionado.getTitulo());
             vista.campoAutor.setText(audioSeleccionado.getAutor());
@@ -238,6 +254,11 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
             Utilidades.lanzaAlertaCombo(vista.comboIdioma);
         }else if(Utilidades.comboNoSeleccionado(vista.comboFormato)){
             Utilidades.lanzaAlertaCombo(vista.comboFormato);
+        }else if( modelo.existeTitulo(vista.campoTitulo.getText())){
+            JOptionPane.showMessageDialog(null,
+                    "Ya existe el nombre, cambielo.",
+                    "Error",
+                    JOptionPane.ERROR_MESSAGE);
         }else{
             try {
                 titulo = vista.campoTitulo.getText();
@@ -292,5 +313,64 @@ public class ReproductorControlador implements ActionListener, ListSelectionList
         }
     }
 
+    private void buscar(){
 
+    }
+
+    private void actualizarAudio(){
+        Number valorParticipantes = (Number)  vista.campoParticipantes.getValue();
+        int participantes = valorParticipantes.intValue();
+
+        Number valorDuracion = (Number)  vista.campoParticipantes.getValue();
+        Double duracion  = valorDuracion.doubleValue();
+
+            if (actualizarAudio == null ){
+                JOptionPane.showMessageDialog(null,"debe seleccionr un audio para poder editarlo", "Error", JOptionPane.ERROR_MESSAGE);
+            }else if (!Utilidades.campoVacioCalendario(vista.campoTitulo)){
+                Utilidades.lanzaAlertaVacio(vista.campoTitulo);
+            }else if (!Utilidades.campoVacioCalendario(vista.campoAutor)){
+                Utilidades.lanzaAlertaVacio(vista.campoAutor);
+            }else if(!Utilidades.campoVacioCalendario(vista.campoProductora)){
+                Utilidades.lanzaAlertaVacio(vista.campoProductora);
+            }else if (!Utilidades.campoVacioCalendario(vista.campoGeneroFluido)){
+                Utilidades.lanzaAlertaVacio(vista.campoGeneroFluido);
+            }else if (Utilidades.campoVacioCalendario(vista.campoFehca)){
+                Utilidades.lanzaAlertaVacioCalendar(vista.campoFehca);
+            }else if (participantes == 0){
+                Utilidades.lanzaAlertaCero(vista.campoParticipantes);
+            }else if (duracion == 0){
+                Utilidades.lanzaAlertaCero(vista.campoDuracion);
+            }else if (Utilidades.comboNoSeleccionado(vista.comboIdioma)){
+                Utilidades.lanzaAlertaCombo(vista.comboIdioma);
+            }else if(Utilidades.comboNoSeleccionado(vista.comboFormato)){
+                Utilidades.lanzaAlertaCombo(vista.comboFormato);
+            }else if( modelo.existeTitulo(vista.campoTitulo.getText()) && !actualizarAudio.getTitulo().equalsIgnoreCase(vista.campoTitulo.getText())){
+                JOptionPane.showMessageDialog(null,
+                        "Ya existe el nombre, cambielo.",
+                        "Error",
+                        JOptionPane.ERROR_MESSAGE);
+            }else{
+                try {
+                    titulo = vista.campoTitulo.getText();
+                    autor = vista.campoAutor.getText();
+                    generoFluido = vista.campoGeneroFluido.getText();
+                    prodcutora = vista.campoProductora.getText();
+                    fechaDeSalida = vista.campoFehca.getDate();
+                    nParticipantes = participantes;
+                    tiempoDuracion = duracion;
+                    idioma = vista.comboIdioma.getSelectedItem().toString();
+                    formato = vista.comboFormato.getSelectedItem().toString();
+                    valoracion = vista.campoValoracion.getValue();
+                    generoFluido = vista.campoGeneroFluido.getText();
+
+                    modelo.actulizarAudio(actualizarAudio, titulo, autor,prodcutora,fechaDeSalida,nParticipantes,tiempoDuracion,idioma,formato,valoracion,generoFluido);
+                    refrescar();
+                    limpiarCampos();
+                    actualizarAudio =null;
+
+                }catch (Exception ex) {
+
+                }
+            }
+    }
 }

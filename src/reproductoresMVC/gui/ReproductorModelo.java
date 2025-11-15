@@ -4,6 +4,7 @@ import org.w3c.dom.*;
 import org.xml.sax.SAXException;
 import reproductoresMVC.base.*;
 
+import javax.swing.*;
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
@@ -225,6 +226,73 @@ public class ReproductorModelo {
 
         }
 
+    }
+    public void buscarPorTitulo(String tituloBuscado) {
+        for (Audio audio : listaAudios) {
+            if (audio.getTitulo().equals(tituloBuscado)) {
+
+                String informacion =
+                                "Título: " + audio.getTitulo() +
+                                "\nAutor: " + audio.getAutor() +
+                                "\nProductora: " + audio.getProductora() +
+                                "\nFecha de salida: " + audio.getFechaSalida() +
+                                "\nNúmero de participantes: " + audio.getNumParticipantes() +
+                                "\nDuración: " + audio.getDuracion() +
+                                "\nIdioma: " + audio.getIdioma() +
+                                "\nFormato: " + audio.getFormato() +
+                                "\nValoración: " + audio.getValoracion();
+
+                // Campos específicos
+                if (audio instanceof Musica) {
+                    informacion += "\nGénero: " + ((Musica) audio).getGenero();
+                } else if (audio instanceof AudioLibro) {
+                    informacion += "\nCategoría: " + ((AudioLibro) audio).getCategoria();
+                } else if (audio instanceof Podcast) {
+                    informacion += "\nInvitados: " + ((Podcast) audio).getInvitados();
+                } else if (audio instanceof Noticias) {
+                    informacion += "\nCategoría: " + ((Noticias) audio).getCategoria();
+                }
+
+                JOptionPane.showMessageDialog(null, informacion, "Audio encontrado", JOptionPane.INFORMATION_MESSAGE);
+                return;
+            }
+        }
+
+        JOptionPane.showMessageDialog(null,
+                "No se encontró ningún audio con ese título.",
+                "No encontrado",
+                JOptionPane.WARNING_MESSAGE);
+    }
+
+    public void actulizarAudio(Audio actuAudio, String titulo, String autor, String productora, LocalDate fecha, int numParticipantes, double duracion, String idioma, String formato, double valoracion, String general){
+        actuAudio.setTitulo(titulo);
+        actuAudio.setAutor(autor);
+        actuAudio.setProductora(productora);
+        actuAudio.setFechaSalida(fecha);
+        actuAudio.setNumParticipantes(numParticipantes);
+        actuAudio.setDuracion(duracion);
+        actuAudio.setIdioma(idioma);
+        actuAudio.setFormato(formato);
+        actuAudio.setValoracion(valoracion);
+
+        if (actuAudio instanceof Musica) {
+            ((Musica) actuAudio).setGenero(general);
+        } else if (actuAudio instanceof AudioLibro) {
+            ((AudioLibro) actuAudio).setCategoria(general);
+        } else if (actuAudio instanceof Podcast) {
+            ((Podcast) actuAudio).setInvitados(general);
+        } else if (actuAudio instanceof Noticias) {
+            ((Noticias) actuAudio).setCategoria(general);
+        }
+    }
+
+    public boolean existeTitulo(String titulo) {
+        for (Audio audio : listaAudios) {
+            if (audio.getTitulo().equals(titulo)) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

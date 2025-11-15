@@ -28,6 +28,9 @@ public class Ventana {
     public JTextField campoGeneroFluido;
     public DatePicker campoFehca;
     public JList list1;
+    public JButton actualizarButton;
+    public JButton buscarButton;
+    public JTextField campoBuscar;
 
 
     //hechos por mi
